@@ -1,0 +1,22 @@
+---
+galaxy_info:
+  author: crgwilson
+  role_name: brew
+  description: Install Homebrew
+  license: MIT
+  min_ansible_version: 2.10
+  platforms:
+    - name: EL
+      versions:
+        - 8
+        - 7
+    - name: Debian
+      versions:
+        - buster
+        - stretch
+
+  galaxy_tags:
+    - brew
+    - homebrew
+
+dependencies: []

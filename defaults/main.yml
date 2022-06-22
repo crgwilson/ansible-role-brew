@@ -1,0 +1,12 @@
+---
+brew_version: 3.5.2
+
+brew_download_uri: "https://github.com/Homebrew/brew/archive/refs/tags/{{ brew_version }}.tar.gz"
+brew_checksum_algo: sha256
+brew_download_checksum: b81a55102d1c5442aef7f2eea86c3557573c27e5b549dc38b763778bff40a11b
+
+brew_owner: root
+brew_group: root
+
+brew_tmp_dir: /tmp
+brew_archive_name: "brew_{{ brew_version }}.tar.gz"
