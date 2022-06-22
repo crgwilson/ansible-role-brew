@@ -5,3 +5,22 @@
 
   roles:
     - role: ansible-role-brew
+
+  tasks:
+    # TODO: These are too slow for CI
+    # - name: Test update
+    #   brew:
+    #     path: /opt/brew-3.5.2/bin/brew
+    #     update_cache: true
+    #
+    # - name: Test upgrade
+    #   brew:
+    #     path: /opt/brew-3.5.2/bin/brew
+    #     upgrade: true
+
+    - name: Test installing packages
+      brew:
+        path: /opt/brew-3.5.2/bin/brew
+        name:
+          - yadm
+          - git-number
