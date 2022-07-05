@@ -1,10 +1,4 @@
 ---
-- name: Get OS specific vars
-  include_vars: "{{ item }}"
-  with_first_found:
-    - "{{ ansible_system }}.yml"
-    - "{{ ansible_os_family }}.yml"
-
 - name: Check if brew is already installed
   stat:
     path: "{{ brew_install_prefix }}/brew-{{ brew_version }}/bin/brew"
@@ -15,6 +9,7 @@
     url: "{{ brew_download_uri }}"
     dest: "{{ brew_tmp_dir }}/{{ brew_archive_name }}"
     checksum: "{{ brew_checksum_algo }}:{{ brew_download_checksum }}"
+    timeout: "{{ brew_download_timeout }}"
   when: not brew_stat.stat.exists
 
 - name: Unpack Brew archive
